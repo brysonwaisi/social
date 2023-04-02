@@ -1,4 +1,7 @@
+@import '../../style.scss';
+ 
 .rightBar {
+  @include themify($themes) {
   flex: 3;
   position: sticky;
   top: 70px;
@@ -8,6 +11,8 @@
   &::-webkit-scrollbar {
     display: none;
   }
+  background-color: themed('bgSoft');
+
 
   .container {
     padding: 20px;
@@ -20,6 +25,7 @@
       span {
         color: rgb(97, 94, 94);
       }
+      background-color: themed('bg');
 
       .user {
         display: flex;
@@ -51,12 +57,12 @@
           }
 
           p {
-            color: gray;
+            color: themed('textColorSoft');
           }
 
           span {
             font-weight: 500;
-            color: black;
+            color: themed('textColor');
           }
         }
 
@@ -84,4 +90,5 @@
       }
     }
   }
+}
 }

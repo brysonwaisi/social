@@ -13,15 +13,19 @@ import Messages from "../../assets/10.png";
 import Tutorials from "../../assets/11.png";
 import Courses from "../../assets/12.png";
 import Fund from "../../assets/13.png";
+import { useContext } from 'react';
+import { AuthContext } from '../../context/authContext';
 
 const Leftbar = () => {
+
+  const {currUser} = useContext(AuthContext);
   return (
     <div className="leftbar">
       <div className="container">
         <div className="menu">
           <div className="user">
             <img src={uno} alt="" />
-            <span>Breezy</span>
+            <span>{currUser.name}</span>
           </div>
           <div className="item">
             <img src={Friends} alt="" />

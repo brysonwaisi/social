@@ -14,7 +14,7 @@ import Profile from './pages/profile/Profile'
 
 function App() {
 
-  const currUser = false;
+  const currUser = true;
 
   // Using router-dom outlet
   const Layout = () => {

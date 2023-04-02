@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
+  Navigate,
 } from "react-router-dom";
 import Navbar from './components/navbar/Navbar'
 import Leftbar from './components/leftbar/Leftbar'
@@ -12,6 +13,8 @@ import Home from './pages/home/Home'
 import Profile from './pages/profile/Profile'
 
 function App() {
+
+  const currUser = false;
 
   // Using router-dom outlet
   const Layout = () => {
@@ -27,10 +30,21 @@ function App() {
     )
   }
 
+  const ProtectedRoute = ({children}) => {
+    if(!currUser) {
+      return <Navigate to='/login' />
+    }
+    return children;
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+      ),
       children: [
         {
           path: '/',

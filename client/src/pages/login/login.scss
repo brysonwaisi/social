@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.login {
+  height: 100vh;
+  background-color: rgb(155, 139, 155);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .card {
+    display: flex;
+    width: 50%;
+    border-radius: 10px;
+    min-height: 400px;
+    background-color: #f5f0f0;
+    overflow: hidden;
+
+    .left {
+      flex: 1;
+      background: linear-gradient(rgb(216, 211, 211, 0.5), rgb(67, 67, 80, 0.5)), url('../../assets/cover.jpeg'), center;
+      background-size: cover;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      color: rgb(8, 0, 0);
+      gap: 20px;
+
+      h1 {
+        font-size: 50px;
+        line-height: 40px;
+        color:#333131
+      }
+      p {}
+      span {
+        font-size: 15px;
+      }
+      button {
+        width: 50%;
+        border: none;
+        background-color: #fff;
+        color: rgb(153, 43, 226);
+        cursor: pointer;
+        font-weight: bold;
+        padding: 5px;
+      }
+    }
+    .right {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+
+      h1 {
+        color: #555;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        input {
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
+        }
+        button {
+          width: 50%;
+          border: none;
+          background-color: #4d94f0;
+          color: #fff;
+          cursor: pointer;
+          font-weight: bold;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

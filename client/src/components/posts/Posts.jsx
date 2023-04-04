@@ -10,12 +10,12 @@ const Posts = () => {
       return res.data
     })
   )
-
+  console.log(data)
   return (
     <div className="posts">
-      {posts.map(post => {
+      {error ? 'Something is not right' : (isLoading ? 'loading' : data.map(post => {
         <Post post={post} key={post.id} />
-      })}
+      }))}
     </div>
   )
 }

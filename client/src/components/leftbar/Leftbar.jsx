@@ -1,5 +1,4 @@
 import './leftbar.scss'
-import uno from '../../assets/uno.jpeg'
 import Friends from "../../assets/1.png";
 import Groups from "../../assets/2.png";
 import Market from "../../assets/3.png";
@@ -24,7 +23,7 @@ const Leftbar = () => {
       <div className="container">
         <div className="menu">
           <div className="user">
-            <img src={uno} alt="" />
+            <img src={currUser.profilePic} alt="" />
             <span>{currUser.name}</span>
           </div>
           <div className="item">

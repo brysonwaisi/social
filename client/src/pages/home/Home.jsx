@@ -9,7 +9,7 @@ const Home = () => {
       <Stories />
       <Share />
       <Posts />
-    </div>
+    </div>   
   )
 }
 

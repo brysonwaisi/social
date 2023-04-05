@@ -7,6 +7,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import Comments from '../comments/Comments'
+import moment from 'moment'
 
 const Post = ({post}) => {
   const [commentOpen, setCommentOpen] = useState(false)
@@ -19,7 +20,7 @@ const Post = ({post}) => {
       <div className="container">
         <div className="user">
           <div className="userInfo">
-            <img src={post.profilePic} alt="" />
+            <img src={'/upload/'+post.profilePic} alt="" />
             <div className="details">
               <Link
                 to={`/profile/${post.userId}`}
@@ -27,18 +28,18 @@ const Post = ({post}) => {
               >
                 <span className="name">{post.name}</span>
               </Link>
-              <span className="date">1 min ago</span>
+              <span className="date">{moment(post.createdAt).fromNow()}</span>
             </div>
           </div>
           <MoreHorizIcon />
         </div>
         <div className="content">
           <p>{post.desc}</p>
-          <img src={post.img} alt="" />
+          <img src={'/upload/'+ post.img} alt="" />
         </div>
         <div className="info">
           <div className="item">
-            {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
+            {liked ? <FavoriteOutlinedIcon style={{color: 'red'}} /> : <FavoriteBorderOutlinedIcon />}
             12 Likes
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
@@ -50,7 +51,7 @@ const Post = ({post}) => {
             Share
           </div>
         </div>
-        {commentOpen && <Comments />}
+        {commentOpen && <Comments postId={post.id}/>}
       </div>
     </div>
   )

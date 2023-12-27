@@ -1,8 +1,9 @@
-import mysql from 'mysql'
+import mysql from 'mysql2' 
 
 export const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "waisi14",
-  database: "social"
-})
+  host: process.env.DBHOST,
+  user: process.env.DBUSER,
+  password: process.env.DBPASSWORD,
+  database: process.env.DATABASE,
+  insecureAuth: true,
+});
